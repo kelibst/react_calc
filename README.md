@@ -1,4 +1,5 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# react_calc
+I will build a calculator for Math-magicians Inc using create-react-app,
 
 ## Available Scripts
 
