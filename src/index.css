@@ -47,3 +47,13 @@ button {
   font-size: 2rem;
   font-weight: bolder;
 }
+
+
+input {
+  outline: none;
+  background: transparent;
+  border: none;
+  font-size: 1.6rem;
+  font-weight: bolder;
+  text-align:right ;
+}
