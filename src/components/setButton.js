@@ -1,18 +1,15 @@
-import React from 'react'
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
+function SetButton(props) {
+  const { name } = props;
 
-
- function SetButton(props) {
-
-    const {name} = props
-    
-    return (
-        <button type="button">{name}</button>
-    )
+  return (
+    <button type="button">{name}</button>
+  );
 }
 SetButton.propTypes = {
-    name: PropTypes.string.isRequired,
-}
+  name: PropTypes.string.isRequired,
+};
 
-export default SetButton
+export default SetButton;
