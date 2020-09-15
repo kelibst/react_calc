@@ -4,7 +4,7 @@ function DisplayPanel(props) {
     const { res } = props;
     return (
         <div className="disContainer">
-           <input type="text" value={res}/>
+           <p>{res}</p>
         </div>
     )
 }

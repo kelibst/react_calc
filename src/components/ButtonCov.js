@@ -9,11 +9,16 @@ export default function ButtonCov() {
         ['1', '2', '3', '+'],
         ['0', '.', '=']
     ];
+    const patt = /^[+\-=÷x]$/i
     return (
         <div className="btn-container">
             {btns.map(btn =>(
                 <div key={btn} className="row">
-                    {btn.map(bt =>(<SetButton name={bt} key={bt}/>))}
+                    {btn.map(bt =>(<SetButton 
+                        name={bt} 
+                        key={bt}
+                        color={(patt.test(bt)) ? 'orange' : 'white'}
+                        wide={(bt === "0")}/>))}
                 </div>
             ))}
         </div>
