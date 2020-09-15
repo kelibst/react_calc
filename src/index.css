@@ -69,3 +69,11 @@ button {
   flex: 0 1 200%;
   padding: 2.1rem;
 }
+.history {
+  font-size: 1.6rem;
+  padding-bottom: 1rem;
+  position: absolute;
+  top: -.5rem;
+  right: 1rem;
+  color: lightcyan;
+}

@@ -1,4 +1,4 @@
-import operate from './operate';
+import {operate, history} from './operate';
 
 const calculate = (data, btnName) =>{
     let { total, next, operation} = data;
@@ -37,7 +37,7 @@ const calculate = (data, btnName) =>{
       break;
       
     case '.':
-        const patt = /[\.]/m
+        const patt = /[.]/m
       if (!(patt.test(total))) {
         total += '.';
       } else if (operation) {
@@ -69,7 +69,6 @@ const calculate = (data, btnName) =>{
           break;
 
     default:
-        console.log(next)
         if(next){
             total = operate(total, next, operation);
             next = null;
@@ -80,7 +79,7 @@ const calculate = (data, btnName) =>{
       
     }
 
-  return { total, next, operation };
+  return { total, next, operation, history };
 }
 
 export default calculate

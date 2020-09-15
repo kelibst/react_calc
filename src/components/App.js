@@ -23,17 +23,16 @@ class App extends Component {
     this.setState(cal);
   }
   genResult(){
-    const { total, next } = this.state;
-    if (next) {
-      return next;
-    }
-    return total;
+
+    const { total, next, history } = this.state;
+    console.log(history)
+    return next? next : total;
   }
 
   render() {
     return (
     <div className="App center-box">
-      <DisplayPanel res={this.genResult()} />
+      <DisplayPanel res={this.state} />
       <ButtonCov handleClick={this.handleClick}/>
     </div>
     )
