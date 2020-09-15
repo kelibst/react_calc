@@ -15,14 +15,14 @@ class App extends Component {
       operation: null,
     };
     this.handleClick = this.handleClick.bind(this);
-    this.passResult = this.passResult.bind(this)
+    this.genResult = this.genResult.bind(this)
   }
 
   handleClick(btnName){
     const cal = calculate(this.state, btnName);
     this.setState(cal);
   }
-  passResult(){
+  genResult(){
     const { total, next } = this.state;
     if (next) {
       return next;
@@ -33,7 +33,7 @@ class App extends Component {
   render() {
     return (
     <div className="App center-box">
-      <DisplayPanel res={this.passResult()} />
+      <DisplayPanel res={this.genResult()} />
       <ButtonCov handleClick={this.handleClick}/>
     </div>
     )

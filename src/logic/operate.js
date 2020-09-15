@@ -4,7 +4,6 @@ const operate = (numberOne, numberTwo, operation) => {
   const one = Big(numberOne);
   const two = Big(numberTwo);
   let result;
-
   switch (operation) {
     case '+':
       result = one.plus(two);
@@ -12,7 +11,7 @@ const operate = (numberOne, numberTwo, operation) => {
     case '-':
       result = one.minus(two);
       break;
-    case 'x':
+    case 'X':
       result = one.times(two);
       break;
     case '÷':
@@ -21,8 +20,7 @@ const operate = (numberOne, numberTwo, operation) => {
       }
       result = one.div(two);
       break;
-    default:
-      result = one.times(two.times(0.01));
+   
   }
   return result.toString();
 };
