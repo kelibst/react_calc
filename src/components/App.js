@@ -1,4 +1,5 @@
 import React from 'react';
+import calculate from '../logic/calculate';
 import ButtonCov from './ButtonCov';
 import DisplayPanel from './DisplayPanel';
 
