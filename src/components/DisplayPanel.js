@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 function DisplayPanel(props) {
     const { res } = props;
+    console.log(props)
     return (
         <div className="disContainer">
            <p>{res}</p>
