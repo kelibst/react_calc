@@ -5,19 +5,33 @@ I built a calculator for Math-magicians Inc using create-react-app,
 - Users can perform basic calculations with ease
 
 # Screenshot
-[screenshot]()
+![Screenshot](screenshot.gif)
 
 # Live Demo
-[Live Demo Link](https://calcobuild.herokuapp.com)
+[Live Demo Link](https://calcobuild.herokuapp.com) 
 
 
 # Built With
 
-- React
+- HTML 
+- CSS
+- JAVASCRIPT
+- NPM
+- REACT
+- NODE
+- HEROKU
+- ESLINT
+- STYLELINT
+- GITHUB ACTIONS
 
 ### Usage
+- Clone the project 
+```
+git clone https://github.com/kelibst/react_calc.git
+```
 - Run `npm install` to install the local dependencies
 - Run `npm start` to launch local development server
+- The project should launch in your default browser
 
 
 ## Authors
@@ -32,10 +46,6 @@ I built a calculator for Math-magicians Inc using create-react-app,
 
 # 🤝 Contributing
 Contributions, issues and feature requests are welcome!
-
-
-Design inspiration from [Kirill Zhukovsky](https://dribbble.com/shots/9713186-To-Do-Dashboard/attachments/1743028?mode=media)
-
 Feel free to check the issues page
 
 # Show your support

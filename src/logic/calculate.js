@@ -1,4 +1,6 @@
-import operate from './operate';
+/* eslint-disable no-case-declarations */
+/* eslint-disable consistent-return */
+import { operate, history } from './operate';
 
 const calculate = (data, btnName) => {
   let { total, next, operation } = data;
@@ -37,14 +39,13 @@ const calculate = (data, btnName) => {
       break;
 
     case '.':
-      if (next) {
-        if (!next.includes('.')) {
-          next += '.';
-        }
+      const patt = /[.]/m;
+      if (!(patt.test(total))) {
+        total += '.';
       } else if (operation) {
         next = '0.';
-      } else if (!total.incudes('.')) {
-        total += '.';
+      } else {
+        return;
       }
       break;
 
@@ -62,7 +63,7 @@ const calculate = (data, btnName) => {
         next += btnName;
       } else if (operation) {
         next = btnName;
-      } else if (total === '0') {
+      } else if (total === '0' || total === null) {
         total = btnName;
       } else {
         total += btnName;
@@ -70,12 +71,18 @@ const calculate = (data, btnName) => {
       break;
 
     default:
-      total = operate(total, next, operation);
-      next = null;
-      operation = btnName;
+      if (next) {
+        total = operate(total, next, operation);
+        next = null;
+        operation = btnName;
+      } else {
+        operation = btnName;
+      }
   }
 
-  return { total, next, operation };
+  return {
+    total, next, operation, history,
+  };
 };
 
 export default calculate;

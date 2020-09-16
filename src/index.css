@@ -83,7 +83,24 @@ button {
   color: white;
 }
 
+.orange:hover {
+  background-color: rgb(255, 188, 64);
+}
+
+.white:hover {
+  background: lightgray;
+}
+
 .flex {
   flex: 0 1 200%;
   padding: 2.1rem;
+}
+
+.history {
+  font-size: 1.6rem;
+  padding-bottom: 1rem;
+  position: absolute;
+  top: -0.5rem;
+  right: 1rem;
+  color: lightcyan;
 }

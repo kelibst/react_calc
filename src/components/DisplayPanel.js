@@ -1,11 +1,15 @@
+/* eslint-disable react/forbid-prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
 
 function DisplayPanel(props) {
   const { res } = props;
+  const { next, total, history } = res;
+  const disRes = next || total;
   return (
     <div className="disContainer">
-      <p>{res}</p>
+      <p className="history">{history}</p>
+      <p>{disRes}</p>
     </div>
   );
 }
@@ -16,7 +20,7 @@ DisplayPanel.defaultProps = {
 };
 // the result from the props should be a string
 DisplayPanel.propTypes = {
-  res: PropTypes.string,
+  res: PropTypes.object,
 };
 
 export default DisplayPanel;
