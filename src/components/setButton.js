@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function SetButton(props) {
-  console.log(props);
   const { name, color, wide } = props;
   const cl = `${wide ? `flex ${color}` : `${color}`}`;
   return (

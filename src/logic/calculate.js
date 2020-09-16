@@ -1,7 +1,7 @@
 import operate from './operate';
 
 const calculate = (data, btnName) => {
-  const { total, next, operation } = data;
+  let { total, next, operation } = data;
 
   switch (btnName) {
     case 'AC':
