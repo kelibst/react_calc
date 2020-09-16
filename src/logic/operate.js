@@ -1,10 +1,11 @@
+/* eslint-disable import/no-mutable-exports */
 import Big from 'big.js';
 
 let history = null;
 const operate = (numberOne, numberTwo, operation) => {
   const one = Big(numberOne);
   const two = Big(numberTwo);
-  history = `${numberOne} ${operation} ${numberTwo}`
+  history = `${numberOne} ${operation} ${numberTwo}`;
   let result;
   switch (operation) {
     case '+':
@@ -23,11 +24,10 @@ const operate = (numberOne, numberTwo, operation) => {
       result = one.div(two);
       break;
 
-      default:
+    default:
       result = one;
-   
   }
   return result.toString();
 };
 
-export {operate, history};
+export { operate, history };

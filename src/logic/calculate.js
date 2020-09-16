@@ -1,21 +1,23 @@
-import {operate, history} from './operate';
+/* eslint-disable no-case-declarations */
+/* eslint-disable consistent-return */
+import { operate, history } from './operate';
 
-const calculate = (data, btnName) =>{
-    let { total, next, operation} = data;
+const calculate = (data, btnName) => {
+  let { total, next, operation } = data;
 
-    switch(btnName) {
+  switch (btnName) {
     case 'AC':
-        total = '0';
-        next = null;
-        operation = null;
-        break;
+      total = '0';
+      next = null;
+      operation = null;
+      break;
     case '+/-':
-        if (next) {
-            next = operate(next, '-1', 'X');
-        } else {
-            total = operate(total, '-1', 'X');
-        }
-        break;
+      if (next) {
+        next = operate(next, '-1', 'X');
+      } else {
+        total = operate(total, '-1', 'X');
+      }
+      break;
 
     case '%':
       if (next) {
@@ -35,15 +37,15 @@ const calculate = (data, btnName) =>{
         operation = null;
       }
       break;
-      
+
     case '.':
-        const patt = /[.]/m
+      const patt = /[.]/m;
       if (!(patt.test(total))) {
         total += '.';
       } else if (operation) {
         next = '0.';
-      }else{
-          return
+      } else {
+        return;
       }
       break;
 
@@ -57,29 +59,30 @@ const calculate = (data, btnName) =>{
     case '7':
     case '8':
     case '9':
-          if (next) {
-            next += btnName;
-          } else if (operation) {
-            next = btnName;
-          } else if (total === '0' || total === null) {
-            total = btnName;
-          } else {
-            total += btnName;
-          }
-          break;
+      if (next) {
+        next += btnName;
+      } else if (operation) {
+        next = btnName;
+      } else if (total === '0' || total === null) {
+        total = btnName;
+      } else {
+        total += btnName;
+      }
+      break;
 
     default:
-        if(next){
-            total = operate(total, next, operation);
-            next = null;
-            operation = btnName;
-        }else{
-            operation = btnName;
-        }
-      
-    }
+      if (next) {
+        total = operate(total, next, operation);
+        next = null;
+        operation = btnName;
+      } else {
+        operation = btnName;
+      }
+  }
 
-  return { total, next, operation, history };
-}
+  return {
+    total, next, operation, history,
+  };
+};
 
-export default calculate
+export default calculate;

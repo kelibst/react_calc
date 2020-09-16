@@ -1,10 +1,7 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import ButtonCov from './ButtonCov';
 import DisplayPanel from './DisplayPanel';
 import calculate from '../logic/calculate';
-
-
-
 
 class App extends Component {
   constructor(props) {
@@ -15,29 +12,27 @@ class App extends Component {
       operation: null,
     };
     this.handleClick = this.handleClick.bind(this);
-    this.genResult = this.genResult.bind(this)
+    this.genResult = this.genResult.bind(this);
   }
 
-  handleClick(btnName){
+  handleClick(btnName) {
     const cal = calculate(this.state, btnName);
     this.setState(cal);
   }
-  genResult(){
 
-    const { total, next, history } = this.state;
-    console.log(history)
-    return next? next : total;
+  genResult() {
+    const { total, next } = this.state;
+    return next || total;
   }
 
   render() {
     return (
-    <div className="App center-box">
-      <DisplayPanel res={this.state} />
-      <ButtonCov handleClick={this.handleClick}/>
-    </div>
-    )
+      <div className="App center-box">
+        <DisplayPanel res={this.state} />
+        <ButtonCov handleClick={this.handleClick} />
+      </div>
+    );
   }
 }
-
 
 export default App;
