@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function DisplayPanel(props) {
+function Display(props) {
   const { res } = props;
   return (
     <div className="disContainer">
@@ -11,12 +11,12 @@ function DisplayPanel(props) {
 }
 
 // the default value
-DisplayPanel.defaultProps = {
+Display.defaultProps = {
   res: '0',
 };
 // the result from the props should be a string
-DisplayPanel.propTypes = {
+Display.propTypes = {
   res: PropTypes.string,
 };
 
-export default DisplayPanel;
+export default Display;

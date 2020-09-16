@@ -1,7 +1,7 @@
 import React from 'react';
-import SetButton from './setButton';
+import Button from './setButton';
 
-export default function ButtonCov() {
+export default function ButtonPanel() {
   const btns = [
     ['AC', '+/-', '%', '÷'],
     ['7', '8', '9', 'X'],
@@ -13,7 +13,7 @@ export default function ButtonCov() {
     <div className="btn-container">
       {btns.map(btn => (
         <div key={btn} className="row">
-          {btn.map(bt => (<SetButton name={bt} key={bt} />))}
+          {btn.map(bt => (<Button name={bt} key={bt} />))}
         </div>
       ))}
     </div>
