@@ -21,6 +21,8 @@ code {
 .App{
   max-width: 70rem;
   margin: auto;
+  display: flex;
+  flex-direction: column;
 }
 .center-box{
   transform: translateY(25%);

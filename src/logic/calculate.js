@@ -1,21 +1,21 @@
 import operate from './operate';
 
-const calculate = (data, btnName) =>{
-    const { total, next, operation} = data;
+const calculate = (data, btnName) => {
+  const { total, next, operation } = data;
 
-    switch(btnName) {
+  switch (btnName) {
     case 'AC':
-        total = '0';
-        next = null;
-        operation = null;
-        break;
+      total = '0';
+      next = null;
+      operation = null;
+      break;
     case '+/-':
-        if (next) {
-            next = operate(next, '-1', 'X');
-        } else {
-            total = operate(total, '-1', 'X');
-        }
-        break;
+      if (next) {
+        next = operate(next, '-1', 'X');
+      } else {
+        total = operate(total, '-1', 'X');
+      }
+      break;
 
     case '%':
       if (next) {
@@ -35,7 +35,7 @@ const calculate = (data, btnName) =>{
         operation = null;
       }
       break;
-      
+
     case '.':
       if (next) {
         if (!next.includes('.')) {
@@ -58,24 +58,24 @@ const calculate = (data, btnName) =>{
     case '7':
     case '8':
     case '9':
-          if (next) {
-            next += buttonName;
-          } else if (operation) {
-            next = buttonName;
-          } else if (total === '0') {
-            total = buttonName;
-          } else {
-            total += buttonName;
-          }
-          break;
+      if (next) {
+        next += btnName;
+      } else if (operation) {
+        next = btnName;
+      } else if (total === '0') {
+        total = btnName;
+      } else {
+        total += btnName;
+      }
+      break;
 
     default:
       total = operate(total, next, operation);
       next = null;
-      operation = buttonName;
-    }
+      operation = btnName;
+  }
 
   return { total, next, operation };
-}
+};
 
-export default calculate
+export default calculate;
