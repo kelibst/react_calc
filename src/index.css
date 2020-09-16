@@ -1,3 +1,7 @@
+html {
+  font-size: 62.5%;
+}
+
 body {
   margin: 0;
   font-family:
@@ -31,8 +35,10 @@ code {
 }
 
 .App {
-  max-width: 600px;
+  max-width: 70rem;
   margin: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .center-box {
@@ -54,24 +60,30 @@ code {
 button {
   width: 100%;
   padding: 1rem;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   font-weight: bolder;
+  height: 10rem;
+  border: 1px solid white;
+  cursor: pointer;
 }
 
 .disContainer {
   display: flex;
-  padding: 2rem;
+  padding: 1rem;
   justify-content: flex-end;
-  background-color: orange;
-  font-size: 2rem;
+  background-color: grey;
+  font-size: 3.2rem;
+  color: white;
   font-weight: bolder;
+  height: 10rem;
 }
 
-input {
-  outline: none;
-  background: transparent;
-  border: none;
-  font-size: 1.6rem;
-  font-weight: bolder;
-  text-align: right;
+.orange {
+  background-color: orange;
+  color: white;
+}
+
+.flex {
+  flex: 0 1 200%;
+  padding: 2.1rem;
 }

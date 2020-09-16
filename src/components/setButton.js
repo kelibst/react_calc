@@ -1,15 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Button(props) {
-  const { name } = props;
-
+function SetButton(props) {
+  const { name, color, wide } = props;
+  const cl = `${wide ? `flex ${color}` : `${color}`}`;
   return (
-    <button type="button">{name}</button>
+    <button type="button" className={cl}>{name}</button>
   );
 }
-Button.propTypes = {
+SetButton.defaultProps = {
+  color: 'orange',
+};
+SetButton.propTypes = {
   name: PropTypes.string.isRequired,
+  color: PropTypes.string,
+  wide: PropTypes.bool.isRequired,
 };
 
-export default Button;
+export default SetButton;

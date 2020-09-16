@@ -1,12 +1,14 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
-import ButtonPanel from './ButtonCov';
-import Display from './DisplayPanel';
+import calculate from '../logic/calculate';
+import ButtonCov from './ButtonCov';
+import DisplayPanel from './DisplayPanel';
 
 function App() {
   return (
     <div className="App center-box">
-      <Display />
-      <ButtonPanel />
+      <DisplayPanel />
+      <ButtonCov />
     </div>
   );
 }
